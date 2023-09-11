@@ -11,52 +11,22 @@ class Chatlist extends StatefulWidget {
 }
 
 class _ChatlistState extends State<Chatlist> {
-  List muslimNames = [
-    'Muhammad',
-    'Aisha',
-    'Ali',
-    'Fatima',
-    'Omar',
-    'Khadijah',
-    'Hassan',
-    'Zainab',
-    'Ahmed',
-    'Maryam',
-    'Ibrahim',
-    'Safia',
-    'Yusuf',
-    'Layla',
-    'Mustafa',
-    'Sana',
-    'Abdullah',
-    'Nadia',
-    'Omar',
-    'Leila',
-  ];
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text("Chat List"),
-        ),
-        body: ListView.builder(
-          itemCount: User.userList.length,
-          itemBuilder: (context, index) => ListTile(
-            title: Text(User.userList[index].name),
-            subtitle: Text(User.userList[index].lastSeen),
+    return ListView.builder(
+      itemCount: User.userList.length,
+      itemBuilder: (context, index) => ListTile(
+        leading: CircleAvatar(
+          radius: 30,
+          child: ClipOval(child: 
+          FadeInImage.assetNetwork(placeholder:, image: image)
           ),
-          // children: muslimNames.map((value) {
-          //   return ListTile(
-          //     leading: CircleAvatar(
-          //         radius: 30,
-          //         backgroundImage: NetworkImage(
-          //             "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60")),
-          //     title: Text(value.toString(),),
-          //     subtitle: Text("44 minutes ago"),
-          //     // trailing: Text("6:35 PM"),
-          //   );
-          // }).toList(),
-        ));
+          //backgroundImage: NetworkImage(User.userList[index].img),
+        ),
+        title: Text(User.userList[index].name),
+        subtitle: Text(User.userList[index].lastSeen),
+        trailing: Text("2:30 PM"),
+      ),
+    );
   }
 }
