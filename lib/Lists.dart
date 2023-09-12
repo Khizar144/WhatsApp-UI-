@@ -18,9 +18,13 @@ class _ChatlistState extends State<Chatlist> {
       itemBuilder: (context, index) => ListTile(
         leading: CircleAvatar(
           radius: 30,
-          child: ClipOval(child: 
-          FadeInImage.assetNetwork(placeholder:, image: image)
-          ),
+          child: ClipOval(
+              child: FadeInImage.assetNetwork(
+            placeholder: "Accets/images/profile.png",
+            image:
+                "https://media.sproutsocial.com/uploads/2022/06/profile-picture.jpeg",
+            fit: BoxFit.cover,
+          )),
           //backgroundImage: NetworkImage(User.userList[index].img),
         ),
         title: Text(User.userList[index].name),
